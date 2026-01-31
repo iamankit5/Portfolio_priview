@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ankit Mondal | x86, C/C++, AI/ML, Python</title>
+    
+    <!-- External Libraries -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Roboto+Mono:wght@300;400;500;600&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body data-theme="dark">
+    
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-content">
+            <div class="logo-loader">
+                <span>&lt;</span>
+                <span class="loading-text">Loading</span>
+                <span>/&gt;</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 3D Background Effects -->
+    <div class="background-container">
+        <canvas id="threejs-canvas"></canvas>
+        <div class="floating-shapes" id="floatingShapes"></div>
+        <div class="grid-overlay"></div>
+    </div>
+    
+    <!-- Cursor Effect -->
+    <div class="cursor" id="cursor">
+        <div class="cursor-inner"></div>
+    </div>
+    
+    <!-- Header with 3D Effects -->
+    <header class="header" id="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo" data-aos="fade-right">
+                    <span class="logo-bracket">&lt;</span>
+                    <span class="logo-text">Ankit</span>
+                    <span class="logo-slash">/</span>
+                    <span class="logo-end">portfolio</span>
+                    <span class="logo-bracket">&gt;</span>
+                </div>
+                
+                <div class="nav-links" id="navLinks">
+                    <a href="#home" class="nav-link" data-text="Home">
+                        <span>Home</span>
+                    </a>
+                    <a href="#about" class="nav-link" data-text="About">
+                        <span>About</span>
+                    </a>
+                    <a href="#skills" class="nav-link" data-text="Skills">
+                        <span>Skills</span>
+                    </a>
+                    <a href="#projects" class="nav-link" data-text="Projects">
+                        <span>Projects</span>
+                    </a>
+                    <a href="#contact" class="nav-link" data-text="Contact">
+                        <span>Contact</span>
+                    </a>
+                </div>
+                
+                <div class="header-controls">
+                    <button class="theme-toggle" id="themeToggle" title="Toggle Theme">
+                        <i class="fas fa-moon" id="themeIcon"></i>
+                    </button>
+                    <button class="mobile-menu-btn" id="mobileMenuBtn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Hero Section with 3D Elements -->
+    <section class="hero parallax-section" id="home">
+        <div class="hero-3d-container">
+            <div class="floating-elements">
+                <div class="floating-cube cube-1"></div>
+                <div class="floating-cube cube-2"></div>
+                <div class="floating-cube cube-3"></div>
+                <div class="floating-sphere sphere-1"></div>
+                <div class="floating-sphere sphere-2"></div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-intro" data-aos="fade-up" data-aos-delay="200">
+                    <span class="greeting-text">Hello, I'm</span>
+                </div>
+                
+                <h1 class="hero-title" data-aos="fade-up" data-aos-delay="400">
+                    <span class="title-line">
+                        <span class="word" data-text="Ankit">Ankit</span>
+                        <span class="word" data-text="Mondal">Mondal</span>
+                    </span>
+                </h1>
+                
+                <div class="hero-subtitle" data-aos="fade-up" data-aos-delay="600">
+                    <div class="typewriter-container">
+                        <span class="typewriter" id="typewriter"></span>
+                        <span class="cursor-blink">|</span>
+                    </div>
+                </div>
+                
+                <p class="hero-description" data-aos="fade-up" data-aos-delay="800">
+                    I create high-performance systems, optimize algorithms, and build intelligent solutions that bridge the gap between hardware and artificial intelligence.
+                </p>
+                
+                <div class="hero-cta" data-aos="fade-up" data-aos-delay="1000">
+                    <a href="#projects" class="cta-btn primary-btn">
+                        <span>View My Work</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#contact" class="cta-btn secondary-btn">
+                        <span>Get In Touch</span>
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+                
+                <div class="hero-social" data-aos="fade-up" data-aos-delay="1200">
+                    <a href="https://github.com/ankitni" class="social-icon" target="_blank" data-tooltip="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://instagram.com/ankit.in.hex" class="social-icon" target="_blank" data-tooltip="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/ankit-mondal-815609320" class="social-icon" target="_blank" data-tooltip="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://x.com/ankit_in_hex" class="social-icon" target="_blank" data-tooltip="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator" data-aos="fade-up" data-aos-delay="1400">
+            <div class="scroll-line"></div>
+            <span class="scroll-text">Scroll Down</span>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section class="about section" id="about">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle">Passionate Developer & Problem Solver</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text" data-aos="fade-right">
+                    <div class="about-card glass-card">
+                        <h3>Who I Am</h3>
+                        <p>I'm a dedicated developer with a passion for low-level systems programming and artificial intelligence. My journey spans from assembly language optimization to cutting-edge machine learning implementations.</p>
+                        
+                        <h3>What I Do</h3>
+                        <p>I specialize in creating efficient, high-performance solutions that push the boundaries of what's possible. Whether it's optimizing assembly code for maximum performance or developing intelligent AI systems, I thrive on complex challenges.</p>
+                        
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <div class="stat-number" data-count="8">0</div>
+                                <div class="stat-label">Projects Completed</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number" data-count="2">0</div>
+                                <div class="stat-label">Years Experience</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number" data-count="15">0</div>
+                                <div class="stat-label">Problems Solved</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-visual" data-aos="fade-left">
+                    <div class="profile-card">
+                        <div class="profile-image">
+                            <img src="images/profile pic.jpg" alt="Ankit Mondal Profile Picture" class="profile-photo">
+                        </div>
+                        <div class="profile-info">
+                            <h4>Ankit Mondal</h4>
+                            <p>Systems Developer & AI Engineer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Skills Section with 3D Cards -->
+    <section class="skills section" id="skills">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Technical Expertise</h2>
+                <p class="section-subtitle">Technologies I Master</p>
+            </div>
+            
+            <div class="skills-grid">
+                <div class="skill-card glass-card" data-aos="flip-left" data-aos-delay="100">
+                    <div class="skill-icon">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <h3>Assembly x86</h3>
+                    <p>Low-level programming, hardware interaction, and performance optimization for critical systems.</p>
+                    <div class="skill-level">
+                        <div class="skill-progress" data-skill="95"></div>
+                        <span class="skill-percentage">95%</span>
+                    </div>
+                </div>
+                
+                <div class="skill-card glass-card" data-aos="flip-left" data-aos-delay="200">
+                    <div class="skill-icon">
+                        <i class="fab fa-cuttlefish"></i>
+                    </div>
+                    <h3>C/C++ Development</h3>
+                    <p>System programming, embedded development, and high-performance application development.</p>
+                    <div class="skill-level">
+                        <div class="skill-progress" data-skill="90"></div>
+                        <span class="skill-percentage">90%</span>
+                    </div>
+                </div>
+                
+                <div class="skill-card glass-card" data-aos="flip-left" data-aos-delay="300">
+                    <div class="skill-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>AI & Machine Learning</h3>
+                    <p>Developing intelligent systems, neural networks, and predictive models using modern ML frameworks.</p>
+                    <div class="skill-level">
+                        <div class="skill-progress" data-skill="85"></div>
+                        <span class="skill-percentage">85%</span>
+                    </div>
+                </div>
+                
+                <div class="skill-card glass-card" data-aos="flip-left" data-aos-delay="400">
+                    <div class="skill-icon">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <h3>Python Development</h3>
+                    <p>Scripting, automation, data analysis, and building scalable applications and AI solutions.</p>
+                    <div class="skill-level">
+                        <div class="skill-progress" data-skill="92"></div>
+                        <span class="skill-percentage">92%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Projects Section -->
+    <section class="projects section" id="projects">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">Showcasing My Best Work</p>
+            </div>
+            
+            <div class="project-filter" data-aos="fade-up" data-aos-delay="200">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="python">Python</button>
+                <button class="filter-btn" data-filter="system">System</button>
+                <button class="filter-btn" data-filter="ai">AI/ML</button>
+                <button class="filter-btn" data-filter="web">Web</button>
+            </div>
+            
+            <div class="projects-grid">
+                <div class="project-card glass-card" data-category="python ai" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="project-image">
+                        <div class="project-icon">
+                            <i class="fas fa-shield-virus"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="https://github.com/ankitni/Vulnerability-scanner" class="project-link" target="_blank">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Vulnerability Scanner</h3>
+                        <p>A Python ML based project that can detect vulnerabilities on a git repo which can be exploited by hackers.</p>
+                        <div class="tech-stack">
+                            <span class="tech-item">Python</span>
+                            <span class="tech-item">Bandit</span>
+                            <span class="tech-item">scikit-learn</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card glass-card" data-category="system" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="project-image">
+                        <div class="project-icon">
+                            <i class="fas fa-microchip"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Custom Operating System</h3>
+                        <p>An operating system work in progress built from scratch.</p>
+                        <div class="tech-stack">
+                            <span class="tech-item">x86 ASM</span>
+                            <span class="tech-item">C</span>
+                            <span class="tech-item">FAT12</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card glass-card" data-category="ai python" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="project-image">
+                        <div class="project-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="https://github.com/ankitni/ransomeware_beheviour_analysis_ML" class="project-link" target="_blank">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>IoT Ransomware Detection</h3>
+                        <p>Machine learning pipeline for detecting ransomware in IoT devices using network traffic analysis and behavioral patterns.</p>
+                        <div class="tech-stack">
+                            <span class="tech-item">Python</span>
+                            <span class="tech-item">XGBoost</span>
+                            <span class="tech-item">Scikit-learn</span>
+                            <span class="tech-item">SMOTE</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card glass-card" data-category="ai python web" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="project-image">
+                        <div class="project-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="https://ai-chat-website.streamlit.app/" class="project-link" target="_blank">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>AI Character Chat Interface</h3>
+                        <p>Web-based AI character chat interface similar to Character.AI, built with Streamlit. Create and chat with custom AI characters using multiple language models.</p>
+                        <div class="tech-stack">
+                            <span class="tech-item">Python</span>
+                            <span class="tech-item">Streamlit</span>
+                            <span class="tech-item">OpenRouter API</span>
+                            <span class="tech-item">GPT-4</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section class="contact section" id="contact">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Let's Work Together</p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info" data-aos="fade-right">
+                    <div class="contact-card glass-card">
+                        <h3>Let's Connect</h3>
+                        <p>I'm currently available for freelance work and consulting. If you have a project that requires low-level expertise or AI solutions, let's connect!</p>
+                        
+                        <div class="contact-methods">
+                            <div class="contact-method">
+                                <i class="fas fa-envelope"></i>
+                                <span>iamraholchaturvedi@gmail.com</span>
+                            </div>
+                            <div class="contact-method">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Available Worldwide</span>
+                            </div>
+                            <div class="contact-method">
+                                <i class="fas fa-clock"></i>
+                                <span>24/7 Remote Work</span>
+                            </div>
+                        </div>
+                        
+                        <div class="social-links">
+                            <a href="https://github.com/ankitni" class="social-icon" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://instagram.com/ankit.in.hex" class="social-icon" target="_blank">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/ankit-mondal-815609320" class="social-icon" target="_blank">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://x.com/ankit_in_hex" class="social-icon" target="_blank">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form-container" data-aos="fade-left">
+                    <form class="contact-form glass-card" id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" required>
+                            <label for="name">Your Name</label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" required>
+                            <label for="email">Your Email</label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="text" id="subject" name="subject" required>
+                            <label for="subject">Subject</label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                            <label for="message">Your Message</label>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-bracket">&lt;</span>
+                    <span class="logo-text">Ankit</span>
+                    <span class="logo-slash">/</span>
+                    <span class="logo-end">portfolio</span>
+                    <span class="logo-bracket">&gt;</span>
+                </div>
+                
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                
+                <div class="footer-bottom">
+                    <p>&copy; <span id="currentYear">2024</span> Ankit Mondal. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <!-- Loading Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
