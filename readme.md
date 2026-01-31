@@ -1,6 +1,6 @@
 # Ankit Mondal - Interactive Portfolio
 
-🚀 **Live Demo**: [https://ankitni.github.io/portfolio_priview/](https://ankitni.github.io/portfolio_priview/)
+🚀 **Live Demo**: [https://iamankit5.github.io/Portfolio_priview/)
 
 ## 🎨 Features
 
